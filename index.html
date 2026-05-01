@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- ========================================== -->
+<!-- Course: Web Development                    -->
+<!-- Project: E-Portfolio Templates             -->
+<!-- Author: 3rd Year CS Student                -->
+<!-- Note: Works fine but needs some polish     -->
+<!-- ========================================== -->
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajat Pundir | AI & ML Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Core Lenis for smooth scrolling -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.36/dist/lenis.min.js"></script>
+    <!-- Vanilla Tilt for 3D interactions -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader flex-center">
+        <div class="preloader-text-wrap overflow-hidden">
+            <h1 class="preloader-text font-serif text-center">Building the Future with AI.</h1>
+        </div>
+        <div class="progress-bar-container mt-4">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+<!-- Student Note: Navigation bar section -->
+    <!-- Navigation -->
+    <nav class="fixed-nav flex-between w-full">
+        <div class="logo font-serif hover-target">R<span class="text-brown">.</span>P</div>
+        <div class="nav-links font-sans hidden md:flex">
+            <a href="#about" class="hover-target nav-item">About</a>
+            <a href="#projects" class="hover-target nav-item">Projects</a>
+            <a href="#skills" class="hover-target nav-item">Skills</a>
+            <a href="#achievements" class="hover-target nav-item">Achievements</a>
+            <a href="#assignments" class="hover-target nav-item">Assignments</a>
+            <a href="#contact" class="hover-target btn-brown">Let's Talk</a>
+        </div>
+    </nav>
+
+    <!-- Main Content wrapper for Lenis -->
+    <main class="smooth-scroll-wrapper">
+        
+<!-- Student Note: Hero Intro Section -->
+        <!-- HERO SECTION -->
+        <section class="section hero-section relative flex-center">
+            <!-- Background Image with Parallax -->
+            <div class="hero-bg" data-speed="0.3">
+                <img src="college.webp" alt="Campus">
+                <div class="hero-overlay"></div>
+            </div>
+
+            <!-- Foreground Content -->
+            <div class="hero-content z-10 w-full max-w-desktop px-8 flex-between">
+                <div class="hero-text-area">
+                    <p class="font-sans text-xs tracking-widest uppercase text-brown mb-4 reveal-up font-bold">AI & Machine Learning Engineer</p>
+                    <h1 class="font-serif hero-title text-black m-0 leading-tight">
+                        <div class="overflow-hidden"><span class="title-line block">Rajat</span></div>
+                        <div class="overflow-hidden"><span class="title-line block italic text-brown font-light">Pundir.</span></div>
+                    </h1>
+                    <p class="font-sans hero-sub mt-8 text-black opacity-80 max-w-md reveal-up delay-1 leading-relaxed">
+                        B.Tech CS-AIML undergraduate building intelligent systems with Deep Learning, Computer Vision, NLP, and Full-Stack Development. Patent holder & IEEE award winner.
+                    </p>
+                </div>
+                
+                <!-- Floating Profile Image with Parallax -->
+                <div class="hero-image-area" data-speed="0.8">
+                    <div class="profile-card js-tilt hover-target z-20" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
+                        <div class="profile-img-wrap overflow-hidden bg-brown/10">
+                            <img src="profile.jpg" alt="Rajat Pundir" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <!-- Decorative Element -->
+                    <div class="decor-circle absolute -z-10 bg-brown opacity-10 rounded-full blur-3xl w-64 h-64 -bottom-10 -right-10"></div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator flex-col-center z-10 absolute bottom-10">
+                <span class="font-sans text-xs uppercase tracking-widest text-brown mb-2 font-bold">Scroll to Explore</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION / MARQUEE -->
+        <section class="section bg-white relative pb-32 pt-20">
+            <div class="marquee-container bg-brown text-white py-6 overflow-hidden flex whitespace-nowrap shadow-xl transform -rotate-2 scale-[1.05]">
+                <div class="marquee-content font-serif text-[3.5rem] italic tracking-wide h-20 flex items-center">
+                    Python · TensorFlow · PyTorch · React · FastAPI · Deep Learning · Computer Vision · NLP · LLMs · Docker · AWS · 
+                </div>
+                <div class="marquee-content font-serif text-[3.5rem] italic tracking-wide h-20 flex items-center" aria-hidden="true">
+                    Python · TensorFlow · PyTorch · React · FastAPI · Deep Learning · Computer Vision · NLP · LLMs · Docker · AWS · 
+                </div>
+            </div>
+
+            <div id="about" class="max-w-desktop mx-auto px-8 mt-40 flex flex-col lg:flex-row gap-20">
+                <div class="lg:w-1/3 relative">
+                    <span class="font-sans text-xs uppercase tracking-widest text-brown mb-4 block font-bold">Introduction</span>
+                    <h2 class="font-serif text-5xl text-black leading-tight about-heading">
+                        AI enthusiast &amp; <br/>passionate <span class="italic text-brown">builder.</span>
+                    </h2>
+                    <div class="decorative-line w-20 h-1 bg-brown mt-8"></div>
+                </div>
+                <div class="lg:w-2/3 font-sans text-lg text-black/80 space-y-6 about-text">
+                    <p class="leading-relaxed">
+                        Hello, my name is <strong>Rajat Pundir</strong>, and I am currently pursuing a B.Tech in Computer Science with a specialization in Artificial Intelligence and Machine Learning. I have a strong foundation in programming languages such as C, C++, Java, and Python, along with web development technologies including HTML, CSS, and JavaScript.
+                    </p>
+                    <p class="leading-relaxed">
+                        My primary areas of interest lie in Artificial Intelligence, Machine Learning, and Deep Learning. I have hands-on experience working with frameworks like TensorFlow and PyTorch, and I am also familiar with tools and platforms such as MongoDB and cloud technologies for building scalable applications.
+                    </p>
+                    <p class="leading-relaxed">
+                        I have worked on impactful projects, including an AI-powered agriculture support platform that detects crop diseases across multiple crops using IoT and machine learning models, and provides recommendations for pesticides, fertilizers, and dosage. The system also integrates APIs for mandi prices, weather forecasting, and multilingual chatbot support, and is currently helping over 50 farmers.
+                    </p>
+                    <p class="leading-relaxed">
+                        Additionally, I developed a smart traffic light management system using CNN and reinforcement learning techniques to optimize traffic flow, which reduced waiting time by 15–20% in simulations. For this work, we filed a patent and presented a research paper at an IEEE conference.
+                    </p>
+                    <p class="leading-relaxed">
+                        In terms of achievements, my team ranked in the top 10 at a hackathon organized by IIT Delhi, and I secured a position within the top 1000 in the Amazon ML Challenge.
+                    </p>
+                    <p class="leading-relaxed border-l-4 border-brown pl-6 italic font-medium text-black mt-8">
+                        "I am passionate about building AI-driven solutions that create real-world impact and aim to contribute meaningfully to innovative organizations through my technical and problem-solving skills."
+                    </p>
+                </div>
+            </div>
+
+            <!-- INTRO VIDEO -->
+            <div class="max-w-desktop mx-auto px-8 mt-20">
+                <span class="font-sans text-xs uppercase tracking-widest text-brown mb-4 block font-bold text-center">Introduction</span>
+                <h2 class="font-serif text-4xl text-black text-center mb-10">Watch My <span class="italic text-brown font-light">Intro</span></h2>
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-brown/10" style="max-width:800px;margin:0 auto;">
+                    <video controls preload="metadata" class="w-full" style="display:block;" poster="">
+                        <source src="intro-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION & CERTIFICATIONS -->
+        <section id="credentials" class="section bg-cream py-32 border-t border-brown-light/30">
+            <div class="max-w-desktop mx-auto px-8">
+                <div class="text-center mb-24">
+                    <span class="font-sans text-xs uppercase tracking-widest text-brown mb-4 block font-bold">Academic Journey</span>
+                    <h2 class="font-serif text-5xl text-black">Education & <span class="italic text-brown font-light">Certifications</span></h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+                    <div class="space-y-12 relative before:absolute before:left-[-20px] before:active:top-0 before:h-full before:w-[1px] before:bg-brown/20 md:pl-0 pl-[40px] md:before:hidden">
+                        <div class="timeline-item reveal-up p-8 bg-white rounded-2xl shadow-[0_10px_40px_-10px_rgba(92,64,51,0.1)] border border-brown/5 relative js-tilt" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                            <span class="font-sans text-xs font-bold uppercase tracking-wider text-brown block mb-2">2023 — 2027 (Expected) • CGPA: 8.56</span>
+                            <h3 class="font-serif text-2xl mb-1 text-black">B.Tech — CS (AI & ML)</h3>
+                            <p class="font-sans text-sm text-black/60">Graphic Era Hill University, India</p>
+                            <p class="font-sans text-xs text-black/40 mt-3">DSA · OOP · DBMS · OS · Networks · Compiler Design</p>
+                        </div>
+                        <!-- Resume Download -->
+                        <a href="Rajat_Pundir_Cisco.pdf" download class="block reveal-up delay-1 p-8 bg-brown text-white rounded-2xl shadow-xl hover:-translate-y-2 transition-transform text-center">
+                            <span class="material-symbols-outlined text-4xl mb-3 block">description</span>
+                            <h3 class="font-serif text-2xl mb-2">Download Resume</h3>
+                            <p class="font-sans text-xs uppercase tracking-wider opacity-80">PDF • Rajat Pundir</p>
+                        </a>
+                    </div>
+                    <div class="space-y-6 flex flex-col justify-start">
+                        <div class="flex items-center gap-6 p-5 bg-brown text-white rounded-2xl shadow-xl reveal-up hover-target hover:-translate-y-2 transition-transform">
+                            <span class="material-symbols-outlined text-3xl opacity-80">cloud</span>
+                            <div>
+                                <h4 class="font-serif text-lg mb-0">AWS Certified Cloud Practitioner</h4>
+                                <p class="font-sans text-xs uppercase tracking-wider opacity-80">Amazon Web Services • Aug 2025</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6 p-5 bg-brown-light text-brown-dark rounded-2xl shadow-md reveal-up delay-1 hover-target hover:-translate-y-2 transition-transform">
+                            <span class="material-symbols-outlined text-3xl opacity-80">smart_toy</span>
+                            <div>
+                                <h4 class="font-serif text-lg mb-0 text-black">GenAI & LLMs + NLP + Transformers</h4>
+                                <p class="font-sans text-xs uppercase tracking-wider text-black/70">IBM • 2025–2026</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6 p-5 bg-white border border-brown/10 rounded-2xl shadow-sm reveal-up delay-2 hover-target hover:-translate-y-2 transition-transform">
+                            <span class="material-symbols-outlined text-3xl text-brown opacity-80">cloud_queue</span>
+                            <div>
+                                <h4 class="font-serif text-lg mb-0 text-black">Cloud Computing</h4>
+                                <p class="font-sans text-xs uppercase tracking-wider text-black/60">NPTEL • Sep 2024</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6 p-5 bg-white border border-brown/10 rounded-2xl shadow-sm reveal-up delay-3 hover-target hover:-translate-y-2 transition-transform">
+                            <span class="material-symbols-outlined text-3xl text-brown opacity-80">psychology</span>
+                            <div>
+                                <h4 class="font-serif text-lg mb-0 text-black">Career Essentials in Gen AI</h4>
+                                <p class="font-sans text-xs uppercase tracking-wider text-black/60">Microsoft & LinkedIn</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6 p-5 bg-white border border-brown/10 rounded-2xl shadow-sm reveal-up delay-3 hover-target hover:-translate-y-2 transition-transform">
+                            <span class="material-symbols-outlined text-3xl text-brown opacity-80">visibility</span>
+                            <div>
+                                <h4 class="font-serif text-lg mb-0 text-black">Azure AI Fundamentals (AI-900)</h4>
+                                <p class="font-sans text-xs uppercase tracking-wider text-black/60">Microsoft Learn</p>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+
+        <!-- PROJECTS BENTO GRID -->
+        <section id="projects" class="section bg-white py-32 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-[0.03] z-0 flex items-center justify-center">
+                <h2 class="font-serif text-[18vw] whitespace-nowrap font-bold text-brown leading-none">PROJECTS</h2>
+            </div>
+            <div class="max-w-desktop mx-auto px-8 z-10 relative">
+                <div class="text-center mb-20 flex flex-col md:flex-row justify-between items-end">
+                    <div class="text-left">
+                        <span class="font-sans text-xs uppercase tracking-widest text-brown mb-4 block font-bold">Featured Work</span>
+                        <h2 class="font-serif text-5xl md:text-6xl text-black">My <span class="italic text-brown font-light">Projects</span></h2>
+                    </div>
+                    <div class="flex gap-16 mt-10 md:mt-0 bg-cream px-8 py-6 rounded-2xl border border-brown/10 shadow-sm">
+                        <div class="text-center">
+                            <div class="text-4xl font-serif text-brown font-bold mb-2 counter" data-target="6">0</div>
+                            <div class="text-[10px] uppercase tracking-widest font-bold text-black/60">Projects</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-serif text-brown font-bold mb-2 counter" data-target="300">0</div>
+                            <div class="text-[10px] uppercase tracking-widest font-bold text-black/60">LC Problems</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 w-full auto-rows-auto">
+                    <!-- QuizEra -->
+                    <a href="https://github.com/Rajatpundir7/QuizEra" target="_blank" class="bento-box md:col-span-8 bg-cream rounded-3xl p-10 flex flex-col justify-between hover-target group shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden relative min-h-[280px] no-underline">
+                        <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-brown/5 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+                        <div class="z-10">
+                            <span class="font-sans text-[10px] uppercase font-bold tracking-widest bg-white text-brown px-3 py-1 rounded-full mb-4 inline-block">Java · JDBC · MySQL</span>
+                            <h3 class="font-serif text-3xl mb-3 text-black">QuizEra</h3>
+                            <p class="font-sans opacity-80 text-black max-w-md leading-relaxed text-sm">Full-stack quiz & code evaluation platform supporting 100+ concurrent sessions. Automated scoring reduced manual effort by 85%. Integrated LLM-based code transformation recommendations.</p>
+                        </div>
+                    </a>
+                    <!-- KISAN.JI -->
+                    <a href="https://github.com/Rajatpundir7/kisanji" target="_blank" class="bento-box md:col-span-4 bg-brown text-white rounded-3xl p-10 flex flex-col justify-between hover-target group shadow-sm hover:shadow-2xl transition-all duration-500 min-h-[280px] no-underline">
+                        <span class="font-sans text-[10px] uppercase font-bold tracking-widest bg-white/20 px-3 py-1 rounded-full mb-4 inline-block">Python · FastAPI · GNNs · YOLOv8</span>
+                        <div>
+                            <h3 class="font-serif text-2xl mb-2">KISAN.JI</h3>
+                            <p class="font-sans text-sm opacity-80">AI agriculture platform — 45+ crop disease detection, 8+ languages, GNN-based pest outbreak prediction.</p>
+                        </div>
+                    </a>
+                    <!-- Smart Traffic -->
+                    <a href="https://github.com/Rajatpundir7/Smart-Traffic-Management-Systern-for-Urban-Congestion" target="_blank" class="bento-box md:col-span-4 bg-white text-black border border-brown/10 rounded-3xl p-10 flex flex-col justify-between hover-target group shadow-sm hover:shadow-2xl transition-all duration-500 min-h-[280px] no-underline">
+                        <span class="font-sans text-[10px] uppercase font-bold tracking-widest bg-cream text-brown px-3 py-1 rounded-full mb-4 inline-block">TensorFlow · DQN · OpenCV</span>
+                        <div>
+                            <h3 class="font-serif text-2xl mb-2 text-black">Smart Traffic System</h3>
+                            <p class="font-sans text-sm opacity-80 text-black/80">DRL-based adaptive signal control — cut wait time by 40%. Real-time detection via SSD MobileNet V2 at 602 FPS.</p>
+                        </div>
+                    </a>
+                    <!-- Amazon ML -->
+                    <a href="https://github.com/Rajatpundir7/amazon-ml-challanges-" target="_blank" class="bento-box md:col-span-8 bg-brown-light text-brown-dark rounded-3xl p-10 flex border border-brown/20 flex-col justify-between hover-target group shadow-sm hover:shadow-2xl transition-all duration-500 relative overflow-hidden min-h-[280px] no-underline">
+                        <span class="font-sans text-[10px] uppercase font-bold tracking-widest bg-white/50 text-brown px-3 py-1 rounded-full mb-4 inline-block">BERT · ResNet-50 · XGBoost · Optuna</span>
+                        <div class="z-10 relative">
+                            <h3 class="font-serif text-3xl mb-3 text-black">Smart Product Pricing Engine</h3>
+                            <p class="font-sans text-black/80 max-w-lg leading-relaxed text-sm">Multimodal ML pipeline for Amazon ML Challenge 2025. 75K entries, attention-weighted cross-modal fusion, 53.63 SMAPE. Ranked under 1,500 of 70,000+ participants.</p>
+                        </div>
+                    </a>
+                    <!-- OB Infrasolution -->
+                    <a href="https://obinfrasolutionpvtltd6.vercel.app/" target="_blank" class="bento-box md:col-span-6 bg-cream rounded-3xl p-10 flex flex-col justify-between hover-target group shadow-sm hover:shadow-2xl transition-all duration-500 min-h-[250px] no-underline">
+                        <span class="font-sans text-[10px] uppercase font-bold tracking-widest bg-white text-brown px-3 py-1 rounded-full mb-4 inline-block">Web · Vercel · Production</span>
+                        <div>
+                            <h3 class="font-serif text-2xl mb-2 text-black">OB Infrasolution Website</h3>
+                            <p class="font-sans text-sm opacity-80 text-black/80">Production-grade freelance website with extensible component architecture, serving 50+ active users.</p>
+                        </div>
+                    </a>
+                    <!-- AI Video Surveillance -->
+                    <div class="bento-box md:col-span-6 bg-black text-white rounded-3xl p-10 flex flex-col justify-between hover-target group shadow-sm hover:shadow-2xl transition-all duration-500 min-h-[250px]">
+                        <span class="font-sans text-[10px] uppercase font-bold tracking-widest bg-white/10 px-3 py-1 rounded-full mb-4 inline-block">CNN-LSTM · Transformers · Video</span>
+                        <div>
+                            <h3 class="font-serif text-2xl mb-2">AI Video Surveillance</h3>
+                            <p class="font-sans text-sm opacity-80">Classifies 14 activity types from CCTV with severity scoring (1–10). Migrated from CNN-LSTM to transformer-based approach.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="section bg-cream py-32 border-t border-brown-light/30">
+            <div class="max-w-desktop mx-auto px-8 relative">
+                <div class="text-center mb-16">
+                    <span class="font-sans text-xs uppercase tracking-widest text-brown mb-4 block font-bold">Technical Arsenal</span>
+                    <h2 class="font-serif text-5xl text-black">Technical <span class="italic text-brown font-light">Skills</span></h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-2xl p-8 border border-brown/5 shadow-sm hover:shadow-xl transition-all">
+                        <h3 class="font-serif text-xl mb-4 text-brown">Languages</h3>
+                        <p class="font-sans text-sm text-black/70 leading-relaxed">C, C++, C#, Java, Python, JavaScript, SQL, HTML/CSS</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 border border-brown/5 shadow-sm hover:shadow-xl transition-all">
+                        <h3 class="font-serif text-xl mb-4 text-brown">AI & ML</h3>
+                        <p class="font-sans text-sm text-black/70 leading-relaxed">Deep Learning, Computer Vision, NLP, GenAI, LLMs, AI Agents, Transformers, RAG, RL (DQN/DRL), GNNs</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 border border-brown/5 shadow-sm hover:shadow-xl transition-all">
+                        <h3 class="font-serif text-xl mb-4 text-brown">Frameworks</h3>
+                        <p class="font-sans text-sm text-black/70 leading-relaxed">TensorFlow, PyTorch, OpenCV, FastAPI, Django, React, Node.js, LangChain, Hugging Face, YOLOv8, XGBoost</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 border border-brown/5 shadow-sm hover:shadow-xl transition-all">
+                        <h3 class="font-serif text-xl mb-4 text-brown">Cloud & DevOps</h3>
+                        <p class="font-sans text-sm text-black/70 leading-relaxed">AWS, Azure, Docker, Git/GitHub, GitHub Actions, Vercel, CI/CD</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 border border-brown/5 shadow-sm hover:shadow-xl transition-all">
+                        <h3 class="font-serif text-xl mb-4 text-brown">Databases</h3>
+                        <p class="font-sans text-sm text-black/70 leading-relaxed">MySQL, MongoDB (Cloud), Firebase</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 border border-brown/5 shadow-sm hover:shadow-xl transition-all">
+                        <h3 class="font-serif text-xl mb-4 text-brown">CS Fundamentals</h3>
+                        <p class="font-sans text-sm text-black/70 leading-relaxed">DSA, OOP, DBMS, OS, Networks, System Design, Compiler Design, Agile, REST APIs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS -->
+        <section id="achievements" class="section bg-white py-32 border-t border-brown-light/30">
+            <div class="max-w-desktop mx-auto px-8 relative">
+                <div class="text-center mb-16">
+                    <span class="font-sans text-xs uppercase tracking-widest text-brown mb-4 block font-bold">Recognition</span>
+                    <h2 class="font-serif text-5xl text-black">Achievements & <span class="italic text-brown font-light">Leadership</span></h2>
+                </div>
+                <div class="pub-list space-y-4">
+                    <article class="bg-cream rounded-2xl p-8 hover:shadow-xl transition-all duration-500 border border-brown/5 hover-target group">
+                        <span class="font-sans text-[10px] uppercase font-bold tracking-widest bg-brown text-white px-3 py-1 rounded-full">Patent Filed • Feb 2026</span>
+                        <h3 class="font-serif text-2xl font-bold mt-4 mb-2 text-black group-hover:text-brown transition-colors">Adaptive Multi-Agent Traffic Control System</h3>
+                        <p class="font-sans text-sm text-black/70">Indian Patent Application No. 202511132246 A — GNN, Reinforcement Learning, Computer Vision, MAPPO, GAT</p>
+                    </article>
+                    <article class="bg-cream rounded-2xl p-8 hover:shadow-xl transition-all duration-500 border border-brown/5 hover-target group">
+                        <span class="font-sans text-[10px] uppercase font-bold tracking-widest bg-brown text-white px-3 py-1 rounded-full">IEEE 1st Place • Oct 2025</span>
+                        <h3 class="font-serif text-2xl font-bold mt-4 mb-2 text-black group-hover:text-brown transition-colors">AI-Based Traffic Control: GNN-DRL with CV & Multi-Agent Coordination</h3>
+                        <p class="font-sans text-sm text-black/70">IEEE Research Paper — 1st Place award for multi-agent AI traffic system research.</p>
+                    </article>
+                    <article class="bg-cream rounded-2xl p-8 hover:shadow-xl transition-all duration-500 border border-brown/5 hover-target group">
+                        <span class="font-sans text-[10px] uppercase font-bold tracking-widest bg-brown text-white px-3 py-1 rounded-full">Hackathon • Dec 2025</span>
+                        <h3 class="font-serif text-2xl font-bold mt-4 mb-2 text-black group-hover:text-brown transition-colors">Square Hack — IIT Delhi (Top 20 of 700+)</h3>
+                        <p class="font-sans text-sm text-black/70">Led cross-functional team through ideation, prototyping, and final presentation as Team Leader.</p>
+                    </article>
+                    <article class="bg-cream rounded-2xl p-8 hover:shadow-xl transition-all duration-500 border border-brown/5 hover-target group">
+                        <span class="font-sans text-[10px] uppercase font-bold tracking-widest bg-brown text-white px-3 py-1 rounded-full">Amazon ML Challenge • Oct 2025</span>
+                        <h3 class="font-serif text-2xl font-bold mt-4 mb-2 text-black group-hover:text-brown transition-colors">Ranked Under 1,500 Among 70,000+ Participants</h3>
+                        <p class="font-sans text-sm text-black/70">National-level machine learning competition by Amazon.</p>
+                    </article>
+                    <article class="bg-cream rounded-2xl p-8 hover:shadow-xl transition-all duration-500 border border-brown/5 hover-target group">
+                        <span class="font-sans text-[10px] uppercase font-bold tracking-widest bg-cream text-brown px-3 py-1 rounded-full border border-brown/20">Competitive Programming</span>
+                        <h3 class="font-serif text-2xl font-bold mt-4 mb-2 text-black group-hover:text-brown transition-colors">LeetCode: 300+ Problems • Rating 1590+</h3>
+                        <p class="font-sans text-sm text-black/70">Solved in C++, Python, and Java. Consistent contest participation.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLASSWORK SECTION -->
+        <section id="assignments" class="section bg-cream py-32 border-t border-brown-light/30">
+            <div class="max-w-desktop mx-auto px-8 relative">
+                <div class="text-center mb-16">
+                    <span class="font-sans text-xs uppercase tracking-widest text-brown mb-4 block font-bold">Academic Work</span>
+                    <h2 class="font-serif text-5xl text-black">Assignments & <span class="italic text-brown font-light">Classwork</span></h2>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Classwork 1: Communication & Resume Prep -->
+                    <div class="bg-white rounded-3xl p-10 border border-brown/5 shadow-xl hover:-translate-y-1 transition-transform flex flex-col h-full">
+                        <div class="flex items-center gap-4 mb-8 border-b border-brown/10 pb-6 shrink-0">
+                            <span class="material-symbols-outlined text-4xl text-brown">school</span>
+                            <h3 class="font-serif text-3xl text-black">Communication & Resume Notes</h3>
+                        </div>
+                        
+                        <div class="space-y-6 font-sans text-sm text-black/80 flex-1 overflow-y-auto pr-4" style="max-height: 500px;">
+                            <div>
+                                <h4 class="font-bold text-brown text-base mb-2">1. Communication Skills</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li><strong>Verbal:</strong> Clarity of speech, professional language, conciseness, confidence.</li>
+                                    <li><strong>Voice & Delivery:</strong> Voice modulation, clear pronunciation, proper pacing.</li>
+                                    <li><strong>Body Language:</strong> Positive posture, eye contact, hand gestures, appearance.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-brown text-base mb-2">2. Content Structuring (5W + 1H)</h4>
+                                <p><strong>What</strong> (Topic), <strong>Why</strong> (Importance), <strong>When</strong> (Time), <strong>Where</strong> (Context), <strong>Who</strong> (Stakeholders), <strong>How</strong> (Process).</p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-brown text-base mb-2">3. Bullet Point Formula</h4>
+                                <p class="bg-cream p-3 rounded-lg border border-brown/10 font-medium">Action Verb + What you did + How you did + Result + Impact</p>
+                                <p class="text-xs mt-2 italic opacity-80">Example: Built a customer churn prediction model using Python and logistic regression, achieving 82% accuracy and improving retention strategy.</p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-brown text-base mb-2">4. ATS Basics</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Checks for keywords, experience, and gaps.</li>
+                                    <li>Parses sections to match keywords and rank based on relevance.</li>
+                                    <li><strong>Goal:</strong> Optimize keyword frequency and job match percentage.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-brown text-base mb-2">5. Ideal Resume Structure</h4>
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Header (Name, Contact, LinkedIn, GitHub)</li>
+                                    <li>Professional Summary (Optional)</li>
+                                    <li>Education (Degree, Institution, CGPA)</li>
+                                    <li>Technical Skills (Languages, Tools, Concepts)</li>
+                                    <li>Projects (Action verbs, problem solved, quantified impact)</li>
+                                    <li>Internship / Experience</li>
+                                    <li>Certifications & Achievements</li>
+                                </ol>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-brown text-base mb-2">6. Resume Evaluation Rubric</h4>
+                                <div class="grid grid-cols-2 gap-2 bg-cream p-4 rounded-xl text-xs font-bold border border-brown/10">
+                                    <span>ATS Compliance (15%)</span>
+                                    <span>Keyword Optimization (20%)</span>
+                                    <span>Quantification (20%)</span>
+                                    <span>Technical Depth (15%)</span>
+                                    <span>Relevance to Role (15%)</span>
+                                    <span>Clarity & Structure (15%)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Classwork 2: Essay Writing -->
+                    <div class="bg-white rounded-3xl p-10 border border-brown/5 shadow-xl hover:-translate-y-1 transition-transform flex flex-col h-full">
+                        <div class="flex items-center gap-4 mb-8 border-b border-brown/10 pb-6 shrink-0">
+                            <span class="material-symbols-outlined text-4xl text-brown">edit_document</span>
+                            <h3 class="font-serif text-3xl text-black">Essay Writing – Structured Notes</h3>
+                        </div>
+                        
+                        <div class="space-y-6 font-sans text-sm text-black/80 flex-1 overflow-y-auto pr-4" style="max-height: 500px;">
+                            <div>
+                                <h4 class="font-bold text-brown text-base mb-2">1. Purpose & Technique</h4>
+                                <p class="mb-2">Develops critical thinking, subject knowledge, and communication skills.</p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li><strong>Understand:</strong> Identify keywords and purpose.</li>
+                                    <li><strong>Brainstorm:</strong> Think of points, examples, arguments.</li>
+                                    <li><strong>Structure:</strong> Introduction, Body, Conclusion.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-brown text-base mb-2">2. Types of Essays</h4>
+                                <div class="space-y-3 mt-3">
+                                    <div class="bg-cream p-3 rounded-lg border border-brown/10">
+                                        <strong>📝 Descriptive:</strong> Describes a person, place, or event in detail using sensory details.
+                                    </div>
+                                    <div class="bg-cream p-3 rounded-lg border border-brown/10">
+                                        <strong>📖 Narrative:</strong> Tells a story or shares personal experiences chronologically.
+                                    </div>
+                                    <div class="bg-cream p-3 rounded-lg border border-brown/10">
+                                        <strong>📊 Expository:</strong> Explains or informs about a topic based on objective facts and examples.
+                                    </div>
+                                    <div class="bg-cream p-3 rounded-lg border border-brown/10">
+                                        <strong>⚖️ Argumentative:</strong> Presents a clear opinion or argument with logical reasoning and evidence.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-brown text-base mb-2">3. Essay Structure</h4>
+                                <ul class="list-decimal pl-5 space-y-2">
+                                    <li><strong>Introduction:</strong> Hook (interesting start), Background of topic, Thesis statement (main idea).</li>
+                                    <li><strong>Body Paragraphs:</strong> One idea per paragraph. Use examples, facts, explanations.</li>
+                                    <li><strong>Conclusion:</strong> Summarize key points, restate main idea, end with a strong closing thought.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-brown text-base mb-2">4. Sample Topics</h4>
+                                <table class="w-full text-left border-collapse mt-2">
+                                    <tr class="border-b border-brown/20"><th class="py-2">Type</th><th class="py-2">Topic</th></tr>
+                                    <tr class="border-b border-brown/10"><td class="py-2 pr-2 font-medium">Descriptive</td><td class="py-2">Insight into an AI laboratory</td></tr>
+                                    <tr class="border-b border-brown/10"><td class="py-2 pr-2 font-medium">Narrative</td><td class="py-2">My first interaction with an AI chatbot</td></tr>
+                                    <tr class="border-b border-brown/10"><td class="py-2 pr-2 font-medium">Expository</td><td class="py-2">Applications of AI in healthcare</td></tr>
+                                    <tr><td class="py-2 pr-2 font-medium">Argumentative</td><td class="py-2">Should AI be regulated by the government?</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT & FOOTER -->
+        <section id="contact" class="section bg-black text-white pt-32 pb-10 relative overflow-hidden flex flex-col justify-between">
+            <div class="absolute inset-0 bg-cover bg-center opacity-10 mix-blend-screen" style="background-image: url('college.webp');"></div>
+            
+            <div class="max-w-desktop mx-auto px-8 w-full z-10 text-center mb-32 relative">
+                <span class="font-sans text-xs uppercase tracking-[0.3em] font-bold text-brown-light mb-6 block">Connect With Me</span>
+                <h2 class="font-serif text-[8vw] md:text-[5vw] font-bold leading-none mb-16 footer-title">
+                    <span class="block text-white/90">Let's Build</span>
+                    <span class="block italic text-brown-light font-light">Together.</span>
+                </h2>
+                
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-20 text-left">
+                    <a href="https://linkedin.com/in/rajat-pundir-b7556b298" target="_blank" class="bg-white/5 border border-white/10 p-6 rounded-2xl hover-target hover:bg-white/10 transition-colors group">
+                        <span class="font-sans text-[10px] uppercase tracking-wider text-brown-light font-bold mb-2 block">LinkedIn</span>
+                        <p class="font-sans text-sm font-medium">Rajat Pundir</p>
+                    </a>
+                    <a href="https://github.com/Rajatpundir07" target="_blank" class="bg-white/5 border border-white/10 p-6 rounded-2xl hover-target hover:bg-white/10 transition-colors group">
+                        <span class="font-sans text-[10px] uppercase tracking-wider text-brown-light font-bold mb-2 block">GitHub</span>
+                        <p class="font-sans text-sm font-medium">Rajatpundir07</p>
+                    </a>
+                    <a href="https://leetcode.com/rajatpundir07" target="_blank" class="bg-white/5 border border-white/10 p-6 rounded-2xl hover-target hover:bg-white/10 transition-colors group">
+                        <span class="font-sans text-[10px] uppercase tracking-wider text-brown-light font-bold mb-2 block">LeetCode</span>
+                        <p class="font-sans text-sm font-medium">1590+ Rating</p>
+                    </a>
+                    <a href="tel:+918923365987" class="bg-white/5 border border-white/10 p-6 rounded-2xl hover-target hover:bg-white/10 transition-colors group">
+                        <span class="font-sans text-[10px] uppercase tracking-wider text-brown-light font-bold mb-2 block">Phone</span>
+                        <p class="font-sans text-sm font-medium">+91-8923365987</p>
+                    </a>
+                </div>
+
+                <a href="mailto:rajatpundir07@gmail.com" class="inline-block border border-brown-light text-brown-light rounded-full px-12 py-5 font-sans uppercase tracking-widest text-sm font-bold hover:bg-brown-light hover:text-brown-dark transition-all duration-500 hover-target shadow-[0_0_30px_rgba(196,164,132,0.15)] hover:shadow-[0_0_50px_rgba(196,164,132,0.3)]">
+                    rajatpundir07@gmail.com
+                </a>
+            </div>
+
+            <div class="max-w-desktop mx-auto px-8 w-full z-10 border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-sans uppercase tracking-widest opacity-60">
+                <p>&copy; 2026 Rajat Pundir. All Rights Reserved.</p>
+                <div class="flex gap-8 mt-4 md:mt-0 font-bold">
+                    <a href="https://github.com/Rajatpundir07" target="_blank" class="hover:text-brown-light transition-colors hover-target">GitHub</a>
+                    <a href="https://linkedin.com/in/rajat-pundir-b7556b298" target="_blank" class="hover:text-brown-light transition-colors hover-target">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

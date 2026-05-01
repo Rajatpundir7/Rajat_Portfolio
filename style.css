@@ -1,0 +1,210 @@
+/* ========================================== */
+/* Main Stylesheet for E-Portfolio            */
+/* Written by: 3rd Year CS Student            */
+/* Note: Using flexbox, responsive design     */
+/* ========================================== */
+
+/* --- Variables & Core Settings --- */
+:root {
+    --color-white: #faf9f6;
+    --color-cream: #f4eee2;
+    --color-brown-light: #c4a484; /* Soft earthy tone */
+    --color-brown: #5c4033;       /* Deep rich brown */
+    --color-brown-dark: #3e2723;
+    --color-black: #1a1a1a;
+    
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+    
+    --max-w-desktop: 1400px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Typography Helpers --- */
+.font-serif { font-family: var(--font-serif); }
+.font-sans  { font-family: var(--font-sans); }
+
+.text-brown { color: var(--color-brown); }
+.text-brown-light { color: var(--color-brown-light); }
+.text-black { color: var(--color-black); }
+.text-white { color: var(--color-white); }
+
+.bg-white { background-color: var(--color-white); }
+.bg-cream { background-color: var(--color-cream); }
+.bg-brown { background-color: var(--color-brown); }
+.bg-brown-light { background-color: var(--color-brown-light); }
+
+.max-w-desktop { max-width: var(--max-w-desktop); margin-left: auto; margin-right: auto; }
+
+.flex-center { display: flex; justify-content: center; align-items: center; }
+.flex-col-center { display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+
+/* --- Preloader --- */
+.preloader {
+    position: fixed; inset: 0;
+    background-color: var(--color-black);
+    z-index: 10000;
+    color: var(--color-white);
+    flex-direction: column;
+}
+.preloader-text {
+    font-size: 3vw;
+    font-weight: 300;
+    transform: translateY(100%); /* Start hidden down for GSAP */
+}
+.progress-bar-container {
+    width: 200px; height: 1px;
+    background-color: rgba(255,255,255,0.2);
+}
+.progress-bar {
+    width: 0%; height: 100%;
+    background-color: var(--color-brown-light);
+}
+
+/* --- Navigation --- */
+.fixed-nav {
+    position: fixed; top: 0; left: 0; width: 100%; padding: 2rem 4rem; z-index: 1000;
+    mix-blend-mode: difference; /* Makes it visible on dark and light bgs automatically */
+    color: white; /* Mix blend will invert this on white bg to black */
+}
+.fixed-nav .text-brown { color: #d4a373; /* Slightly lighter for difference blending */ }
+
+.nav-links { display: flex; gap: 3rem; align-items: center; }
+.nav-item {
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;
+    text-decoration: none; color: inherit;
+    position: relative;
+    font-weight: 600;
+}
+.nav-item::after {
+    content: ''; position: absolute; bottom: -4px; left: 0; width: 0%; height: 1px;
+    background-color: currentColor; transition: width 0.3s ease;
+}
+.nav-item:hover::after { width: 100%; }
+
+.btn-brown {
+    border: 1px solid currentColor;
+    padding: 0.8rem 2rem; border-radius: 50px;
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;
+    text-decoration: none; color: inherit; font-weight: 600;
+    transition: all 0.3s;
+}
+.btn-brown:hover { background-color: var(--color-white); color: var(--color-black); mix-blend-mode: normal; }
+
+
+/* --- Hero Section --- */
+.hero-section {
+    height: 100vh; width: 100%; overflow: hidden;
+}
+.hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+}
+.hero-bg img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(80%) sepia(20%) opacity(0.3);
+}
+.hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(250, 249, 246, 0.4) 0%, var(--color-white) 100%);
+}
+
+.hero-title {
+    font-size: 8vw;
+    letter-spacing: -0.02em;
+}
+
+.scroll-indicator {
+    opacity: 0; /* GSAP reveals this */
+}
+.scroll-line {
+    width: 1px; height: 60px;
+    background-color: var(--color-brown);
+    position: relative;
+    overflow: hidden;
+}
+.scroll-line::after {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: var(--color-white);
+    animation: scrollAnimation 2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+@keyframes scrollAnimation {
+    0% { transform: translateY(-100%); }
+    50% { transform: translateY(0); }
+    100% { transform: translateY(100%); }
+}
+
+/* --- Profile Card (Tilt) --- */
+.profile-card {
+    width: 350px;
+    background: var(--color-white);
+    padding: 10px;
+    box-shadow: 0 30px 60px -15px rgba(92, 64, 51, 0.15);
+    border: 1px solid rgba(0,0,0,0.05);
+    transform-style: preserve-3d;
+}
+.profile-img-wrap {
+    width: 100%; height: 450px; overflow: hidden; transform: translateZ(50px);
+}
+.profile-img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: sepia(30%) contrast(1.1);
+    transition: filter 0.5s;
+}
+.profile-card:hover .profile-img {
+    filter: sepia(0%) contrast(1.1);
+}
+.profile-card-label { transform: translateZ(20px); }
+
+/* --- Marquee --- */
+.marquee-container {
+    width: 110vw;
+    margin-left: -5vw;
+}
+.marquee-content {
+    padding: 0 1vw;
+    animation: marquee 25s linear infinite;
+}
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* --- Timeline Customizations --- */
+.timeline-item::after { 
+    content:''; 
+    position: absolute; 
+    left: -48px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 16px; 
+    height: 16px; 
+    background-color: var(--color-white); 
+    border: 4px solid var(--color-brown); 
+    border-radius: 50%; 
+}
+@media (max-width: 768px) {
+    .timeline-item::after { display: none; }
+}
+
+/* --- Utilities & Responsive --- */
+@media (max-width: 1024px) {
+    .fixed-nav { padding: 1.5rem 2rem; }
+    .hero-title { font-size: 10vw; }
+    .hero-content { flex-direction: column; justify-content: center; text-align: center; gap: 4rem;}
+    .hero-text-area { align-items: center; display: flex; flex-direction: column; z-index: 20;}
+    .profile-card { width: 280px; }
+    .profile-img-wrap { height: 350px; }
+}
+
+/* Custom Selection */
+::selection { background-color: var(--color-brown); color: var(--color-white); }
